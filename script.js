@@ -1,12 +1,13 @@
+// Toggle Hamburger Menu
 function toggleMenu() {
     document.getElementById("nav-menu").classList.toggle("show");
 }
 
-/* Scroll Animation */
+// Scroll Animation
 const elements = document.querySelectorAll(".scroll-animate");
 
 const observer = new IntersectionObserver(
-    entries => {
+    (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("show");
@@ -17,13 +18,15 @@ const observer = new IntersectionObserver(
 );
 
 elements.forEach(el => observer.observe(el));
-/* Mouse Animation */
+
+// Mouse Cursor Animation
 const cursor = document.querySelector(".cursor");
 
-document.addEventListener("mousemove", e => {
+document.addEventListener("mousemove", (e) => {
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
 });
+
 document.querySelectorAll("a, button").forEach(el => {
     el.addEventListener("mouseenter", () => {
         cursor.classList.add("active");
@@ -32,6 +35,7 @@ document.querySelectorAll("a, button").forEach(el => {
         cursor.classList.remove("active");
     });
 });
+
 
 
 
